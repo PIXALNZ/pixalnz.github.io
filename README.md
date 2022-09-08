@@ -1,4 +1,4 @@
-[<p align="center"><img src="https://github.com/PIXALNZ/pixalnz.github.io/blob/main/assets/img/social/Te%20Reo%20Wordle%20Loago.png" alt="Te Reo Wordle logo"></p>]()
+[<p align="center"><img src="https://github.com/PIXALNZ/pixalnz.github.io/blob/main/assets/img/social/Te%20Reo%20Wordle%20Logo.png" alt="Te Reo Wordle logo"></p>]()
  
 Ngā Kupu - A Te Reo Wordle Game
 
