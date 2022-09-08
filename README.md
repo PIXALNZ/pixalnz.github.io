@@ -1,6 +1,6 @@
-[<p align="center"><img src="https://user-images.githubusercontent.com/95859352/152671096-5e7c2d31-177a-49c0-b952-616071321604.png" alt="Te Reo Wordle logo"></p>]()
+[<p align="center"><img src=""./assets/img/social/Te Reo Wordle Logo.png" alt="Te Reo Wordle logo"></p>]()
  
-A Wordle based game made in Javascript
+A Te Rep Wordle based game made in Javascript
 
 **Features**
 
@@ -27,7 +27,7 @@ Wordled can be played in the browser, simply open the index.html file in any bro
 
 **Play online**
 
-Wordled can also be played online at [wordled.online](https://wordled.online)
+The original Wordled can also be played online at [wordled.online](https://wordled.online)
 
 **Languages used**
 
