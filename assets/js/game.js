@@ -402,7 +402,7 @@ function gameStart(){
 
 	let keyLayoutTop = 'AĀEĒÉGHIĪÍK';
 	let keyLayoutMid = 'MNOŌÖPRTUÜŪ';
-	let keyLayoutBot = 'W,‘-,!?';
+	let keyLayoutBot = 'WF,‘-,!?';
 
 	let keyboard = document.createElement('div');
 	keyboard.id = 'keyboard';
