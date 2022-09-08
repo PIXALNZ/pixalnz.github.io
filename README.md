@@ -1,6 +1,6 @@
 [<p align="center"><img src=""./assets/img/social/Te Reo Wordle Logo.png" alt="Te Reo Wordle logo"></p>]()
  
-A Te Rep Wordle based game made in Javascript
+A Te Reo Wordle based game made in Javascript
 
 **Features**
 
