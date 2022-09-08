@@ -36,7 +36,6 @@ Javascript, CSS, HTML
   
   <p align="center"><img src="https://github.com/PIXALNZ/pixalnz.github.io/blob/main/assets/img/screenshots/Start.PNG" alt="menu" style="width:50%"></p>
   <p align="center"><img src="https://github.com/PIXALNZ/pixalnz.github.io/blob/main/assets/img/screenshots/win.PNG" alt="win screen" style="width:50%"></p>
-  <p align="center"><img src="https://user-images.githubusercontent.com/95859352/152353776-aeed8993-6e8d-407f-8656-4c2bc0171c39.png" alt="level select" style="width:50%"></p>
   <p align="center"><img src="https://github.com/PIXALNZ/pixalnz.github.io/blob/main/assets/img/screenshots/wordnotinlist.PNG" alt="word not available" style="width:50%"></p>
   <p align="center><img src="https://github.com/PIXALNZ/pixalnz.github.io/blob/main/assets/img/screenshots/ingamecorrect.PNG" alt="in game" style="width:50%"></p>
 </details>
