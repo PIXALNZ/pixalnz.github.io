@@ -1,13 +1,13 @@
 [<p align="center"><img src="https://user-images.githubusercontent.com/95859352/152671096-5e7c2d31-177a-49c0-b952-616071321604.png" alt="Te Reo Wordle logo"></p>]()
  
-A Wordle based game made in Javascript
+Ngā Kupu - A Te Reo Wordle Game
 
 **Features**
 
 - A choice of either 3, 4 or 5 letter games
 - 5 levels ranging from beginner to god mode
 - 2 difficulty settings
-- More than 20,000 words to play
+- More than 6,000 words to play
 - Score keeping function for each level/difficulty
 - Streak keeping function for each level/difficulty
 - Home screen menu
@@ -19,15 +19,13 @@ A Wordle based game made in Javascript
 
 The higher the level, the more words available and the higher the score you get for each word guessed. There's a score penalty for each time you guess wrong as well as if you give up on the word.
 
-To create your own list, simply edit the ```custom``` variable in **assets/js/words/x.js** (where **x** equals the word length), then choose the **custom** level in the game.
-
 **No installation required**
 
 Wordled can be played in the browser, simply open the index.html file in any browser to play
 
 **Play online**
 
-Wordled can also be played online at [wordled.online](https://wordled.online)
+Wordled can also be played online at [https://pixalnz.github.io/]
 
 **Languages used**
 
