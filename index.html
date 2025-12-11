@@ -1,51 +1,173 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="mi">
 <head>
-    <title>Ngā Kupu - A Te Reo Wordle Game</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <meta name="description" content="When one Wordle a day isn't enough, play an unlimited amount of times with Wordled. You have 6 tries to guess the hidden word">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ngā Kupu - Te Reo Māori Wordle</title>
+    
+    <meta name="description" content="Play Te Reo Māori Wordle - Guess the hidden kupu in 6 tries. Learn te reo while having fun!">
     <meta name="author" content="pixal">
-    <meta property="og:title" content="Te Reo Wordle - A Wordle based game" />
-    <meta property="og:description" content="When one Wordle a day isn't enough, play an unlimited amount of times with Wordled. You have 6 tries to guess the hidden word." />
-    <meta property="og:image" content="https://wordled.online/assets/img/screenshots/game%20board.png" />
-    <meta property="og:locale" content="en">
+    <meta name="theme-color" content="#2d5016">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ngā Kupu - Te Reo Māori Wordle">
+    <meta property="og:description" content="Play Te Reo Māori Wordle - Guess the hidden kupu in 6 tries">
+    <meta property="og:image" content="./assets/img/social/og-image.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wordled.online">
-    <meta property="og:site_name" content="Wordled - A Wordle based game">
-
+    <meta property="og:url" content="https://yourdomain.com">
+    
+    <!-- Icons -->
     <link rel="icon" type="image/x-icon" href="./assets/img/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="./assets/img/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./assets/img/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./assets/img/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./assets/img/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/img/icons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/img/icons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./assets/img/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/icons/favicon-16x16.png">
     <link rel="manifest" href="./assets/img/icons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./assets/img/icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
-    <!-- Add your modified CSS file here -->
-    <link href="./assets/css/modified-style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./assets/js/wordlist.js" as="script">
 </head>
-
 <body>
-    <noscript id="no_script"></noscript>
+    <noscript>
+        <div class="noscript-warning">
+            <h2>JavaScript Required</h2>
+            <p>Kei te hiahia tēnei kēmu i te JavaScript. Please enable JavaScript to play.</p>
+        </div>
+    </noscript>
+
+    <div id="app" class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <button id="helpBtn" class="icon-btn" aria-label="Help">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                </button>
+                
+                <h1 class="title">Ngā Kupu</h1>
+                
+                <button id="statsBtn" class="icon-btn" aria-label="Statistics">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="./assets/img/social/Pixal_Logo.png" alt="PIXAL Logo" class="logo" width="80" height="80">
+        </div>
+
+        <!-- Game Board -->
+        <main class="game-container">
+            <div id="gameBoard" class="game-board"></div>
+            
+            <!-- Message Display -->
+            <div id="message" class="message" role="alert"></div>
+            
+            <!-- Keyboard -->
+            <div id="keyboard" class="keyboard"></div>
+        </main>
+
+        <!-- Modals -->
+        <div id="helpModal" class="modal" role="dialog" aria-labelledby="helpTitle" aria-hidden="true">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="helpTitle">Pēhea te Tākaro | How to Play</h2>
+                    <button class="close-btn" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Guess the <strong>KUPU</strong> in 6 tries.</p>
+                    <p>Each guess must be a valid 5-letter te reo Māori word.</p>
+                    <p>The tile colors show how close your guess was:</p>
+                    
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-tiles">
+                                <span class="tile correct">W</span>
+                                <span class="tile">H</span>
+                                <span class="tile">A</span>
+                                <span class="tile">R</span>
+                                <span class="tile">E</span>
+                            </div>
+                            <p><strong>W</strong> is in the word and in the correct spot.</p>
+                        </div>
+                        
+                        <div class="example">
+                            <div class="example-tiles">
+                                <span class="tile">M</span>
+                                <span class="tile present">A</span>
+                                <span class="tile">O</span>
+                                <span class="tile">R</span>
+                                <span class="tile">I</span>
+                            </div>
+                            <p><strong>A</strong> is in the word but in the wrong spot.</p>
+                        </div>
+                        
+                        <div class="example">
+                            <div class="example-tiles">
+                                <span class="tile">K</span>
+                                <span class="tile">U</span>
+                                <span class="tile">P</span>
+                                <span class="tile absent">U</span>
+                                <span class="tile">A</span>
+                            </div>
+                            <p>The second <strong>U</strong> is not in the word.</p>
+                        </div>
+                    </div>
+                    
+                    <p class="tip"><strong>Kia kaha!</strong> A new word is available after each game.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="statsModal" class="modal" role="dialog" aria-labelledby="statsTitle" aria-hidden="true">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="statsTitle">Ngā Tauanga | Statistics</h2>
+                    <button class="close-btn" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="stats-container">
+                        <div class="stat">
+                            <div class="stat-value" id="gamesPlayed">0</div>
+                            <div class="stat-label">Played</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="winPercentage">0</div>
+                            <div class="stat-label">Win %</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="currentStreak">0</div>
+                            <div class="stat-label">Current Streak</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="maxStreak">0</div>
+                            <div class="stat-label">Max Streak</div>
+                        </div>
+                    </div>
+                    
+                    <h3>Guess Distribution</h3>
+                    <div id="guessDistribution" class="distribution"></div>
+                    
+                    <button id="shareBtn" class="btn-primary">Share Results</button>
+                    <button id="newGameBtn" class="btn-secondary">New Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/wordlist.js"></script>
+    <script src="./assets/js/ui.js"></script>
     <script src="./assets/js/game.js"></script>
 </body>
-
-<center>
-    <img src="./assets/img/social/Pixal_Logo.png" class="centerImage" alt="PIXAL Logo" height="120" width="120">
-</center>
-
 </html>
